@@ -1,0 +1,4 @@
+digraph G {
+size = "5,5";
+center = true;
+}
