@@ -1,0 +1,16 @@
+map: /home/simonj/carolina/solver/instances/8_boxes/example11/example11_map
+#drives: 3
+seed: 1777390432
+solver: PBS
+time_limit: 60
+simulation_window: 1
+planning_window: 20
+simulation_time: 5000
+robust: 0
+rotate: 0
+use_dummy_paths: 0
+hold_endpoints: 0
+mandatory_goal_wait: 5
+close_delivery_obstacles: 1
+max_failed_plans: 25
+max_no_progress_timesteps: 200

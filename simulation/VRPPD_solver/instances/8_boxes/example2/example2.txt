@@ -1,0 +1,36 @@
+data = {}
+
+data['locations'] = [
+    (7, 1),  # 0 - Robot 1
+    (5, 7),  # 1 - Robot 2
+    (3, 2),  # 2 - Robot 3
+    (4, 6),  # 3 - Pickup 1
+    (7, 2),  # 4 - Pickup 2
+    (2, 1),  # 5 - Pickup 3
+    (3, 1),  # 6 - Pickup 4
+    (7, 4),  # 7 - Pickup 5
+    (4, 2),  # 8 - Pickup 6
+    (6, 6),  # 9 - Pickup 7
+    (3, 3),  # 10 - Pickup 8
+    (4, 4),  # 11 - Delivery 1
+    (4, 5),  # 12 - Delivery 2
+    (7, 3),  # 13 - Delivery 3
+    (2, 2),  # 14 - Delivery 4
+    (2, 7),  # 15 - Delivery 5
+    (1, 4),  # 16 - Delivery 6
+    (6, 4),  # 17 - Delivery 7
+    (6, 1),  # 18 - Delivery 8
+]
+
+data['requests'] = [
+    {"pickup": 3, "delivery": 11, "weight": 2.0}, # Box 1
+    {"pickup": 4, "delivery": 12, "weight": 1.5}, # Box 2
+    {"pickup": 5, "delivery": 13, "weight": 1.5}, # Box 3
+    {"pickup": 6, "delivery": 14, "weight": 0.5}, # Box 4
+    {"pickup": 7, "delivery": 15, "weight": 1.0}, # Box 5
+    {"pickup": 8, "delivery": 16, "weight": 2.0}, # Box 6
+    {"pickup": 9, "delivery": 17, "weight": 1.0}, # Box 7
+    {"pickup": 10, "delivery": 18, "weight": 1.0}, # Box 8
+]
+
+data['real_robot_capacities'] = [1.5, 2, 1.5]

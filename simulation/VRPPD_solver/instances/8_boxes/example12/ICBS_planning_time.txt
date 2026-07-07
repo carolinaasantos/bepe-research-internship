@@ -1,0 +1,3 @@
+Tempo total de planejamento (ICBS): 0.017213832 s (17.213832 ms | 17213.832 us | 17213832 ns)
+Tempo total de planejamento (ICBS): 0.012415620 s (12.415620 ms | 12415.620 us | 12415620 ns)
+Tempo total de planejamento (ICBS): 0.013315433 s (13.315433 ms | 13315.433 us | 13315433 ns)

@@ -1,0 +1,3 @@
+Tempo total de planejamento (RHCR): 0.033941292 s (33.941292 ms | 33941.292 us | 33941292 ns)
+Tempo total de planejamento (RHCR): 0.033744891 s (33.744891 ms | 33744.891 us | 33744891 ns)
+Tempo total de planejamento (RHCR): 0.018054742 s (18.054742 ms | 18054.742 us | 18054742 ns)
