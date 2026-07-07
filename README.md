@@ -15,7 +15,7 @@ The project addresses the problem of moving boxes between pickup and delivery lo
 1. A **VRPPD solver** that assigns pickup-and-delivery tasks to each robot while respecting capacity and routing constraints.
 2. Two **MAPF planners** (ICBS and RHCR) that compute collision-free paths for all robots simultaneously.
 3. A **Gazebo simulation** where the generated plans are executed on virtual DOTS robots.
-4. A **physical robot deployment** using the same ROS2 controller on real DOTS robots.
+4. A **physical robot deployment** using a ROS2 controller on real DOTS robots.
 5. **Metrics and analysis** tools that compare planning time, makespan, and real trajectory accuracy.
 
 Although the project was originally framed around swarm robotics, centralized planning algorithms were adopted to ensure solution quality and reliability in constrained warehouse scenarios.
