@@ -1,4 +1,4 @@
-# BEPE Project — Swarm-Based Vehicle Routing for Capacitated Intralogistics
+# BEPE Project - Swarm-Based Vehicle Routing for Capacitated Intralogistics
 
 **Author:** Carolina da Silva Santos - Universidade Federal de São Carlos, Brazil  
 **Supervisor:** Sabine Hauert - University of Bristol, United Kingdom  
@@ -19,8 +19,6 @@ The project addresses the problem of moving boxes between pickup and delivery lo
 5. **Metrics and analysis** tools that compare planning time, makespan, and real trajectory accuracy.
 
 Although the project was originally framed around swarm robotics, centralized planning algorithms were adopted to ensure solution quality and reliability in constrained warehouse scenarios.
-
-Due to GitHub file size limits, the recorded rosbag files and videos are stored separately from this repository.
 
 ---
 
@@ -62,6 +60,9 @@ BEPE-Carolina/
     ├── ros2_ws/               # Physical robot ROS2 workspace (DOTS)
     ├── logs/                  # CSV trajectory logs from real experiments
     └── analysis/              # Trajectory visualization and analysis
+└── metrics/
+    └── graphics/              # Performance graphics and stats
+└── README.md
 ```
 
 ---
@@ -72,8 +73,8 @@ BEPE-Carolina/
 
 `generate_scenarios.py` creates random VRPPD instances on an 8 × 8 grid with 3 robots and a configurable number of boxes. For each scenario it writes:
 
-- `*_map_input.txt` — grid layout with obstacle and free cells.
-- `*_vrppd_data.txt` — robot start positions, box positions, and box weights.
+- `*_map_input.txt` - grid layout with obstacle and free cells.
+- `*_vrppd_data.txt` - robot start positions, box positions, and box weights.
 
 `plot_scenarios.py` generates a PNG layout for visual inspection of each scenario.
 
@@ -95,7 +96,7 @@ Solves the Vehicle Routing Problem with Pickup and Delivery using **Google OR-To
 The objective function minimises total Manhattan travel distance while balancing route lengths across robots. The solver uses `PARALLEL_CHEAPEST_INSERTION` for the initial solution and `GUIDED_LOCAL_SEARCH` as the local search strategy, with a 2-second time limit.
 
 **Outputs per example:**
-- `*_vrppd_paths.txt` — ordered waypoint sequences (start + pickups + deliveries) for each robot.
+- `*_vrppd_paths.txt` - ordered waypoint sequences (start + pickups + deliveries) for each robot.
 
 See [`simulation/VRPPD_solver/README.md`](simulation/VRPPD_solver/README.md) for full details.
 
@@ -183,14 +184,14 @@ After planning, the raw ICBS and RHCR outputs are converted into the segment-by-
 
 Two shell scripts automate the full workflow. Configure `AMOUNT_INST` (number of scenarios) and `QNT_BOX` (boxes per scenario) at the top of each script before running.
 
-**`prepare_and_run_scenarios.sh`** — full pipeline from scenario generation to planner output and file conversion:
+**`prepare_and_run_scenarios.sh`** - full pipeline from scenario generation to planner output and file conversion:
 
 ```bash
 chmod +x simulation/scripts/prepare_and_run_scenarios.sh
 ./simulation/scripts/prepare_and_run_scenarios.sh
 ```
 
-**`run_metrics.sh`** — collects planning time (3 runs per scenario per planner) and makespan from the visualizers. Run only on scenarios that already produced successful solutions:
+**`run_metrics.sh`** - collects planning time (3 runs per scenario per planner) and makespan from the visualizers. Run only on scenarios that already produced successful solutions:
 
 ```bash
 chmod +x simulation/scripts/run_metrics.sh
@@ -205,11 +206,11 @@ See [`simulation/scripts/README.md`](simulation/scripts/README.md) for configura
 
 A ROS2 workspace for executing the computed plans in the Gazebo simulator using DOTS robots. The main components are:
 
-- **`mapf_path_planning.py`** — ROS2 node that loads the ICBS or RHCR segment file for each robot, converts grid coordinates to Gazebo world coordinates, and executes the trajectory via the navigation stack. Coordinates lifter actions (pickup and delivery) and inter-robot synchronization.
-- **`world_converting.py`** — generates the Gazebo `.world` file for a given scenario.
-- **`sim_3_mapf_path_planning.launch.py`** — launch file that starts three controller instances simultaneously.
+- **`mapf_path_planning.py`** - ROS2 node that loads the ICBS or RHCR segment file for each robot, converts grid coordinates to Gazebo world coordinates, and executes the trajectory via the navigation stack. Coordinates lifter actions (pickup and delivery) and inter-robot synchronization.
+- **`world_converting.py`** - generates the Gazebo `.world` file for a given scenario.
+- **`sim_3_mapf_path_planning.launch.py`** - launch file that starts three controller instances simultaneously.
 
-**To run the simulation** (inside the Sirius container — run `sirius -w <workspace>` first):
+**To run the simulation** (inside the Sirius container - run `sirius -w <workspace>` first):
 
 ```bash
 # 1. Generate the Gazebo world
@@ -287,10 +288,10 @@ Each run produces one CSV file per robot, containing timestamped odometry readin
 
 `plot_trajectory.py` loads the CSV logs and generates comparison plots for each robot:
 
-- **Baseline path** — the planned waypoint sequence.
-- **Odometry trajectory** — the path estimated by the robot's own filtered pose.
-- **ArUco trajectory** — positions corrected by the external camera-based localization system.
-- **Time-coloured path** — the trajectory coloured by elapsed time to show speed variation.
+- **Baseline path** - the planned waypoint sequence.
+- **Odometry trajectory** - the path estimated by the robot's own filtered pose.
+- **ArUco trajectory** - positions corrected by the external camera-based localization system.
+- **Time-coloured path** - the trajectory coloured by elapsed time to show speed variation.
 
 ```bash
 python3 experiments/analysis/plot_trajectory.py
@@ -356,7 +357,7 @@ source install/setup.bash
 
 The Sirius system provides a fully containerised ROS2 Iron environment for developing and running code on DOTS robots. All development happens inside Docker, so the setup is the same on Linux, macOS, and Windows (via WSL2).
 
-**SSH Key Setup** — the sirius environment clones private Bitbucket repos, so you need an SSH key added to your Bitbucket account before proceeding:
+**SSH Key Setup** - the sirius environment clones private Bitbucket repos, so you need an SSH key added to your Bitbucket account before proceeding:
 
 ```bash
 ssh-keygen        # press Enter to all prompts
@@ -365,7 +366,7 @@ cat ~/.ssh/id_rsa.pub
 
 Copy the output and add it under Personal Settings → SSH Keys on Bitbucket.
 
-**Installation** — from the root of the NFS share (or wherever you keep your projects):
+**Installation** - from the root of the NFS share (or wherever you keep your projects):
 
 ```bash
 mkdir dots_sirius
@@ -376,7 +377,7 @@ git clone git@bitbucket.org:hauertlab/dots_containers.git
 
 This clones the master container repo, creates a `workspaces/` directory, and installs the `sirius` command-line tool to `/usr/local/bin`.
 
-**Entering the environment** — the concept of a workspace keeps each user's work isolated:
+**Entering the environment** - the concept of a workspace keeps each user's work isolated:
 
 ```bash
 sirius -w <your_workspace_name>
