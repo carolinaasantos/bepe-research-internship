@@ -247,6 +247,8 @@ HOSTNAME_TO_AGENT_ID = {
 
 **To run on physical robots:**
 
+In order to execute experiments on the physical robots, the installation of the DOTS Sirius environment is required. Guidelines can be found at the Installation section at the end of this README.
+
 **1. Start the server** (run on the arena server machine):
 
 ```bash
@@ -258,10 +260,10 @@ This starts the arena GUI and the Zenoh middleware bridge. Turn on the robots an
 **2. Connect to a robot** (by robot number):
 
 ```bash
-sirius -r <robot_num> -w <your_workspace_name>
+sirius -r <robot_num> -w <chosen_workspace_name>
 ```
 
-This SSH-es into the robot and starts a `simonj23/dots_skeleton_minimal:iron` container there, with your workspace mounted.
+This connects to the robot via SSH and starts a `simonj23/dots_skeleton_minimal:iron` container with the chosen workspace mounted.
 
 **3. Build and launch the controller on the robot:**
 
@@ -272,7 +274,7 @@ source install/setup.bash
 ros2 launch dots_example_controllers run_mapf_trajectory.launch.py
 ```
 
-**4.** Trigger the controller using the **Start button** on the game controller (the robot must first be taken out of E-stop via Reset → Power in the server GUI).
+**4.** Trigger the controller using the **Start button** on the game controller (the robot must first be taken out of E-stop via Reset then Power in the server GUI).
 
 **5. Stop the server** when done:
 
