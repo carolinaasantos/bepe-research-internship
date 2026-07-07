@@ -2,7 +2,7 @@
 
 **Author:** Carolina da Silva Santos - Universidade Federal de São Carlos, Brazil  
 **Supervisor:** Sabine Hauert - University of Bristol, United Kingdom  
-**Funding:** FAPESP — BEPE Scientific Initiation
+**Funding:** FAPESP - BEPE Scientific Initiation
 
 ---
 
@@ -19,6 +19,8 @@ The project addresses the problem of moving boxes between pickup and delivery lo
 5. **Metrics and analysis** tools that compare planning time, makespan, and real trajectory accuracy.
 
 Although the project was originally framed around swarm robotics, centralized planning algorithms were adopted to ensure solution quality and reliability in constrained warehouse scenarios.
+
+Due to GitHub file size limits, the recorded rosbag files and videos are stored separately from this repository.
 
 ---
 
