@@ -6,10 +6,6 @@
 
 ---
 
-This repository contains the implementation developed during the BEPE research internship. The code used in the paper "From Simulation to Real Robots: Practical Adaptation of Classical MAPF Algorithms for Multi-Robot Transportation" is included in this repository and corresponds to the execution-aware MAPF framework presented in the paper. Additional documentation and experimental materials related to the internship are also provided.
-
----
-
 ## Overview
 
 This repository contains all code, data, and experiments developed during a BEPE scientific initiation project focused on coordinating multiple robots for pickup-and-delivery tasks in warehouse-style environments.
