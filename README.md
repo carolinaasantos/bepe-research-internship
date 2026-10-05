@@ -389,6 +389,20 @@ If the workspace does not already exist, it is created and populated with the `d
 
 ---
 
+## Demonstration videos
+
+### Low-Fidelity Simulation
+
+https://github.com/user-attachments/assets/badaf4e8-4d54-4ac8-a94d-2dbc6dd7def9
+
+### High-Fidelity Simulation (Gazebo)
+
+https://github.com/user-attachments/assets/3533bfb6-1704-43be-91dc-eeeb992e785a
+
+### Experiment with Real Robots
+
+https://github.com/user-attachments/assets/9902c6c3-c5db-476c-b21d-a21f8b1fda7f
+
 ## License
 
 The RHCR code is derived from the original RHCR repository by Jiaoyang Li et al. and is released under the USC Research License. The original license is preserved at [`simulation/MAPF_RHCR/original_license/license.md`](simulation/MAPF_RHCR/original_license/license.md).
